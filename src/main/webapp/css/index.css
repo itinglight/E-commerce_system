@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+body{
+    background-color:#fcdeb4af;
+}
+a{
+    text-decoration:none;
+    color:#333;
+    font-family: sans-serif;
+}
+
+.topbar{
+    width: 1280px;
+    height: 24px;
+    background-color: #FEC973;
+    position: sticky;
+    top:0px;
+    z-index: 99;
+  
+}
+.topbar >a{
+    margin:0 20px
+}
+
+.topbar ul{
+    float:right;
+    
+}
+.topbar li{
+
+    height: 24px;
+    line-height: 24px;
+    float:left;
+    margin:0 10px;
+    list-style: none;
+}
+.topbar li a:hover{
+    color:#FFF;
+    background-color: coral;
+}
+
+/* .notlogin{
+    display: none;
+} */
+
+.main{
+    
+    width: 900px;
+    height: 640px;
+    background-color: sandybrown;
+    margin:0 auto;
+
+}
+
+.header{
+    width: 900px;
+    height: 100px;
+    background-color: rgb(235, 131, 34);
+    position: relative;
+}
+.logo{
+    background-color: #FFAE2C;
+    width: 80px;
+    height: 60px;
+    position:absolute;
+    top:20px;
+    left: 40px;
+    box-shadow: 0px 0px 1px rgb(56, 56, 56);
+    border-radius: 6px;
+}
+.header h1{
+    text-align: center;
+    line-height: 100px;
+}
+
+.asider{
+    width: 900px;
+    height: 180px;
+    background-color: seashell;
+    display:grid;
+    grid-template-columns: 3fr 7fr ;
+}
+
+.in_aside{
+    background-color: rgb(235, 208, 135);
+}
+
+.in_aside ul li{
+    width: 100%;
+    height: 30px;
+    list-style: none;
+    text-align: center;
+}
+.in_aside ul li a{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.in_aside ul li:nth-child(even){
+    background-color: rgb(243, 221, 96);
+}
+.in_aside ul li a:hover{
+    background-color:sandybrown ;
+}
+
+.img_bar{
+
+
+
+}
+
+.img_main{
+    width: 900px;
+    position: relative;
+    height: 1200px;
+}
+
+
+
+.car{
+    width: 60px;
+    height: 40px;
+    /* background-color: black; */
+   
+    border: rgb(175, 114, 114) 2px solid;
+    position:sticky;
+    top: 500px;
+    float:right;
+    right:100px;
+    color:coral;
+    
+}
+.car:hover{
+    color:white;
+    background-color: rgb(182, 71, 31);
+    border: rgb(233, 17, 17) 2px solid;;
+}
+
+
