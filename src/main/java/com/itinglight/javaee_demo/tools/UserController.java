@@ -1,4 +1,4 @@
-package com.itinglight.javaee_demo.controller;
+package com.itinglight.javaee_demo.tools;
 
 import com.itinglight.javaee_demo.entity.User;
 

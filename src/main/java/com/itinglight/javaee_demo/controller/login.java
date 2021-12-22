@@ -1,4 +1,4 @@
-package com.itinglight.javaee_demo.Webmapping;
+package com.itinglight.javaee_demo.controller;
 
 import com.itinglight.javaee_demo.entity.User;
 
@@ -26,10 +26,9 @@ public class login extends HttpServlet {
 
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopping", "root", "123");
-            String sql="select * from User where account=? and password=?";
+            String sql="select * from User where telephone=? and password=?;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,account);
             preparedStatement.setString(2,password);
@@ -42,7 +41,7 @@ public class login extends HttpServlet {
                 System.out.println("登陆成功");
                 resp.sendRedirect("/index.html");
                 System.out.println(user.getId()+"\n"+user.getPassword());
-                Cookie cookie = new Cookie("user", user.getId());
+                Cookie cookie = new Cookie("login_status", user.getId());
                 cookie.setPath ("/");
                 resp.addCookie(cookie);
 

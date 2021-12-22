@@ -1,4 +1,4 @@
-package com.itinglight.javaee_demo.Webmapping;
+package com.itinglight.javaee_demo.controller;
 
 import com.itinglight.javaee_demo.tools.UserController;
 import com.itinglight.javaee_demo.entity.User;

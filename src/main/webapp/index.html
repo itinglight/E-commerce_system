@@ -11,25 +11,53 @@
 </head>
 <body>
 
+
+
+    <div class="carbackground">
+        <div class="carBorder">
+            <a onclick="showCar()"></a>
+            <h1>购物车 🛒</h1>
+            <div class="table_bg">
+                <table class="add_node">
+                
+                  
+                </table>
+            </div>
+      
+            <div class="clearAll button" onclick="clear_Car()">
+                清空购物车
+            </div>
+            <div class="selectAll button" onclick="select_All()">
+                选择全部
+            </div>
+            <div class="submitButton button">结账下单</div>
+        </div>
+    </div>
+    <svg id="car" class="car" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.75 14.5C6.54167 14.4897 6.36717 14.4142 6.2265 14.2735C6.08583 14.1328 6.0155 13.9583 6.0155 13.75C6.0155 13.5417 6.08583 13.3672 6.2265 13.2265C6.36717 13.0858 6.54167 13.0155 6.75 13.0155C6.95833 13.0155 7.13283 13.0858 7.2735 13.2265C7.41417 13.3672 7.4845 13.5417 7.4845 13.75C7.4845 13.9583 7.41417 14.1328 7.2735 14.2735C7.13283 14.4142 6.95833 14.4897 6.75 14.5ZM11.75 14.5C11.5417 14.4897 11.3672 14.4142 11.2265 14.2735C11.0858 14.1328 11.0155 13.9583 11.0155 13.75C11.0155 13.5417 11.0858 13.3672 11.2265 13.2265C11.3672 13.0858 11.5417 13.0155 11.75 13.0155C11.9583 13.0155 12.1328 13.0858 12.2735 13.2265C12.4142 13.3672 12.4845 13.5417 12.4845 13.75C12.4845 13.9583 12.4142 14.1328 12.2735 14.2735C12.1328 14.4142 11.9583 14.4897 11.75 14.5ZM1.5 2C1.354 2 1.23417 1.95317 1.1405 1.8595C1.04683 1.76583 1 1.646 1 1.5C1 1.354 1.04683 1.23417 1.1405 1.1405C1.23417 1.04683 1.354 1 1.5 1H4C4.125 1 4.23183 1.0365 4.3205 1.1095C4.40917 1.1825 4.46383 1.2815 4.4845 1.4065L5.016 4.0005H14.5005C14.6568 4.0005 14.7845 4.063 14.8835 4.188C14.9825 4.313 15.0163 4.45367 14.985 4.61L13.485 11.61C13.464 11.7247 13.4093 11.8185 13.321 11.8915C13.2327 11.9645 13.1258 12.001 13.0005 12.001H6.0005C5.8755 12.001 5.76867 11.9645 5.68 11.8915C5.59133 11.8185 5.53667 11.7195 5.516 11.5945L3.594 2.0005H1.5V2ZM6.4065 11H12.594L13.8755 5H5.2035L6.4065 11Z" fill="coral"/>
+    </svg>
     <div class="topbar">
         <a href="">配送至：衡阳</a>
         <ul>
-            <li class="islogin"><a href="">欢迎回来！张三 </a></li>
-            <li class="notlogin"><a href="./pages/login.html">登录</a></li>
+            <li class="islogin"><a href="">欢迎回来！张三</a> 
+                <a  class="my_order" href="#">我的订单</a>
+                <a  class="my_order" href="#">账号信息</a>
+            </li>
+            <li class="notlogin"><a href="./pages/login.html">登录</a>
+                <a  class="my_order" href="./pages/login.html">用户人员登录</a>
+                <a  class="my_order" href="./pages/admin/admin.html">管理人员登录</a>
+            </li>
             <li class="notlogin"><a href="./pages/register.html">注册</a></li>
-            <li class="islogin"><a href="#">注销登录</a></li>
+            <li class="islogin exit"><a href="#">注销登录</a></li>
         </ul>
+       
     </div>
-
-    <svg class="car" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6.75 14.5C6.54167 14.4897 6.36717 14.4142 6.2265 14.2735C6.08583 14.1328 6.0155 13.9583 6.0155 13.75C6.0155 13.5417 6.08583 13.3672 6.2265 13.2265C6.36717 13.0858 6.54167 13.0155 6.75 13.0155C6.95833 13.0155 7.13283 13.0858 7.2735 13.2265C7.41417 13.3672 7.4845 13.5417 7.4845 13.75C7.4845 13.9583 7.41417 14.1328 7.2735 14.2735C7.13283 14.4142 6.95833 14.4897 6.75 14.5ZM11.75 14.5C11.5417 14.4897 11.3672 14.4142 11.2265 14.2735C11.0858 14.1328 11.0155 13.9583 11.0155 13.75C11.0155 13.5417 11.0858 13.3672 11.2265 13.2265C11.3672 13.0858 11.5417 13.0155 11.75 13.0155C11.9583 13.0155 12.1328 13.0858 12.2735 13.2265C12.4142 13.3672 12.4845 13.5417 12.4845 13.75C12.4845 13.9583 12.4142 14.1328 12.2735 14.2735C12.1328 14.4142 11.9583 14.4897 11.75 14.5ZM1.5 2C1.354 2 1.23417 1.95317 1.1405 1.8595C1.04683 1.76583 1 1.646 1 1.5C1 1.354 1.04683 1.23417 1.1405 1.1405C1.23417 1.04683 1.354 1 1.5 1H4C4.125 1 4.23183 1.0365 4.3205 1.1095C4.40917 1.1825 4.46383 1.2815 4.4845 1.4065L5.016 4.0005H14.5005C14.6568 4.0005 14.7845 4.063 14.8835 4.188C14.9825 4.313 15.0163 4.45367 14.985 4.61L13.485 11.61C13.464 11.7247 13.4093 11.8185 13.321 11.8915C13.2327 11.9645 13.1258 12.001 13.0005 12.001H6.0005C5.8755 12.001 5.76867 11.9645 5.68 11.8915C5.59133 11.8185 5.53667 11.7195 5.516 11.5945L3.594 2.0005H1.5V2ZM6.4065 11H12.594L13.8755 5H5.2035L6.4065 11Z" fill="coral"/>
-    </svg>
 
     <div class="main">
         <div class="header">
-           <a class="logo" href="">电子商城</a>
+           <a class="logo" href="">在线商城</a>
 
-            <h1>Metavsion Shopping System.</h1>
+            <h1>Metaverse Shopping System.</h1>
             
         </div>
         <div class="asider">
@@ -53,215 +81,10 @@
         </div>
         <div class="img_main">
 
-         
-            <!-- <div class="product_card">
-                <img src="./img/product-1.jpeg" alt="">
-                <br>
-                <span>遥控开关</span>
-                <br>
-                <span>价格:</span>
-                <span>99</span>
-                <span>¥</span>
-                <br>
-                <span>销量:</span>
-                <span>199</span>
-
-                <br>
-                <span>库存:</span>
-                <span>499</span>
-                <br>
-                <button>加入购物车</button>
-            </div>
-     -->
-    
-
         </div>
     </div>
 
         
-   <script>
-       
- 
-
-            // <div class="product_card">
-            //     <img src="./img/product-1.jpeg">
-            //     <br></br>
-            //     <span>遥控开关</span>
-            //     <br>
-            //     <span>价格:</span>
-            //     <span>99</span>
-            //     <span>¥</span>
-            //     <br>
-            //     <span>销量:</span>
-            //     <span>199</span>
-            //     <br>
-            //     <span>库存:</span>
-            //     <span>499</span>
-            //     <br>
-            //     <button>加入购物车</button>
-            // </div>"
-    
-        //添加商品卡片
-        function addnewcard(card_id){
-
-            var text="<div class='product_card newcard'></div>";
-            $(".img_main").prepend(text);
-            $(".newcard").attr("class","product_card "+"card"+card_id)
-            return card_id;
-
-           
-        }
-         //在卡片里面添加数据
-        function addProduct(card_id){
-            // 添加卡片
-            addnewcard(card_id);
-           
-            var text1="<img>";
-            var text2="<br>";
-            var text3="<span>遥控开关</span>";
-            var text4="<br>";
-            var text5="<span>价格:</span>";
-            var text6="<span>99</span>";
-            var text7="<span>¥</span>";
-            var text8="<br>";
-            var text9="<span>销量:</span>";
-            var text10="<span>199</span>";
-            var text11="<br>";
-            var text12="<span>库存:</span>";
-            var text13="<span>499</span>";
-            var text14="<br>";
-            var text15="<button>加入购物车</button>";
-            $(".card"+card_id).prepend(text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15);
-            $(".card"+card_id+" img").attr("src","./img/product-1.jpeg")
-        }
-         //在卡片里面添加 并且改变
-        function addProduct1(card_id,img_url,product_name,prise,stock,sales_volume){
-            // 添加卡片
-            addnewcard(card_id);
-            //添加内容
-            var text1="<img>";
-            var text2="<br>";
-            var text3="<span>"+product_name+"</span>";
-            var text4="<br>";
-            var text5="<span>价格:</span>";
-            var text6="<span>"+prise+"</span>";
-            var text7="<span>¥</span>";
-            var text8="<br>";
-            var text9="<span>销量:</span>";
-            var text10="<span>"+sales_volume+"</span>";
-            var text11="<br>";
-            var text12="<span>库存:</span>";
-            var text13="<span>"+stock+"</span>";
-            var text14="<br>";
-            var text15="<button>加入购物车</button>";
-            $(".card"+card_id).prepend(text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15);
-            $(".card"+card_id+" img").attr("src",img_url)
-        }
-        //更剧json数组动态展示商品
-        function addProduct3(card_id,img_url,product_name,prise,stock,sales_volume){
-            // card_id,img_url,product_name,prise,stock,sales_volume
-            // $.ajax({
-            //         url: "./findallProduct",
-            //         method:"get"
-            //         }).done(function(data) {
-            //             console.log(data);
-            //         })
-            // 添加卡片
-            addnewcard(card_id);
-            //添加内容
-            var text1="<img>";
-            var text2="<br>";
-            var text3="<span>"+product_name+"</span>";
-            var text4="<br>";
-            var text5="<span>价格:</span>";
-            var text6="<span>"+prise+"</span>";
-            var text7="<span>¥</span>";
-            var text8="<br>";
-            var text9="<span>销量:</span>";
-            var text10="<span>"+sales_volume+"</span>";
-            var text11="<br>";
-            var text12="<span>库存:</span>";
-            var text13="<span>"+stock+"</span>";
-            var text14="<br>";
-            var text15="<button>加入购物车</button>";
-            $(".card"+card_id).prepend(text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15);
-            $(".card"+card_id+" img").attr("src",img_url)
-        }
-
-        
-
-        //动态展示number个商品
-        function show_product(number){
-
-            $.ajax({
-                    url: "http://localhost:8080/findallProduct?kinds="+number,
-                    dataType: 'json',
-                    type:"get",
-                    async : true,
-                    success:function(data){
-                        for(var i=0;i<=data.length;i++){
-                        addProduct3(data[i].product_id,data[i].img_url,data[i].product_name,data[i].prise,data[i].stock,data[i].sales_volume);
-                        }
-                    }
-                    
-                });
-        
-
-        }
-
-
-        function show_product_list(){
-                    //根据二级标题内容展示商品
-                    var title=$(".second_title").text();
-                    var number;
-                        switch(title){
-                            case "时下流行":
-                                number=1;break;
-                            case "时尚服装":
-                                number=2;break;
-                            case "休闲食品":
-                                number=3;break;
-                            case "数码产品":
-                                number=4;break;
-                            case "运动产品":
-                                number=5;break;
-                            default:
-                                number=6;break;
-                        }
-                    show_product(number)
-        }
-
-            //切换二级标题
-            $(".in_aside a").click(
-                function(){  //动态 根据二级标题内容展示商品
-                    $(".second_title").text($(".in_aside a:hover").text())
-                    $(".img_main").empty();
-                    show_product_list()
-                }
-            );
-
-                //页面初始化时 根据二级标题内容展示商品
-            $(function(){
-            
-                $.ajax({
-                    url: "http://localhost:8080/findallProduct",
-                    dataType: 'json',
-                    type:"get",
-                    async : true,
-                    success:function(data){
-                        console.log(data);
-                        for(var i=0;i<=data.length;i++){
-                        addProduct3(data[i].product_id,data[i].img_url,data[i].product_name,data[i].prise,data[i].stock,data[i].sales_volume);
-                            
-                        }
-                    }
-                    
-                });
-                
-            });
-
-             
-            
-   </script>
+   <script src="./js/index.js"></script>
 </body>
 </html>

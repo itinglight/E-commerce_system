@@ -1,9 +1,17 @@
+:root {
+    --main-color: rgb(255, 94, 0);
+    --second-main-color:rgb(255,50,0);
+
+    --bg-color:red;
+    --second-bg-color:blue;
+  }
+
 *{
     margin: 0px;
     padding:0px;
 }
 body{
-    background-color:#e2e2e2af;
+    background-color:#ffffffaf;
 }
 a{
     text-decoration:none;
@@ -14,10 +22,12 @@ a{
 .topbar{
     width: 1280px;
     height: 24px;
-    background-color: #202020;
+    background-color: #999;
     position: sticky;
     top:0px;
     z-index: 99;
+    box-shadow: 0px 0px 4px rgb(87, 87, 87);
+
   
 }
 .topbar >a{
@@ -39,13 +49,34 @@ a{
     
 }
 .topbar li a{
+    display: block;
+    width: 120px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
     color:#FFF;
+   
 }
 .topbar li a:hover{
     color:#FFF;
-    background-color: coral;
+    background-color: var(--main-color);
+}
+/* 显示我的订单 */
+.my_order{
+    width: 120px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    background-color: var(--second-bg-color);
+    box-shadow: 0px 1px 2px black;
+    visibility: hidden;
 }
 
+.islogin:hover .my_order,
+.notlogin:hover .my_order{
+    visibility:visible;
+}
 /* .notlogin{
     display: none;
 } */
@@ -53,22 +84,27 @@ a{
 .main{
     
     width: 900px;
-    height: 880px;
-    background-color: sandybrown;
+    /* height: 880px; */
+    background-color: rgb(228, 228, 228);
     margin:0 auto;
-
+    box-shadow: 0px 0px 4px rgb(87, 87, 87);
+    
 }
 
 .header{
     width: 900px;
     height: 100px;
-    background-color: rgb(235, 131, 34);
+    /* background-color: rgb(255, 255, 255); */
     position: relative;
+    border:solid var(--main-color);
+    border-width: 1px 0px 1px 0px ;
 }
 .logo{
-    background-color: #FFAE2C;
+    background-color: var(--main-color);
     width: 80px;
     height: 60px;
+    line-height: 60px;
+    text-align:center;
     position:absolute;
     top:20px;
     left: 40px;
@@ -78,18 +114,19 @@ a{
 .header h1{
     text-align: center;
     line-height: 100px;
+    color:var(--main-color);
 }
 
 .asider{
     width: 900px;
     height: 180px;
-    background-color: seashell;
+    /* background-color: seashell; */
     display:grid;
     grid-template-columns: 3fr 7fr ;
 }
 
 .in_aside{
-    background-color: rgb(235, 208, 135);
+    background-color: rgb(192, 192, 192);
 }
 
 .in_aside ul li{
@@ -106,10 +143,10 @@ a{
 }
 
 .in_aside ul li:nth-child(even){
-    background-color: sandybrown ;
+    background-color: rgb(235, 235, 235) ;
 }
 .in_aside ul li a:hover{
-    background-color:rgb(21, 161, 255);
+    background-color:var(--main-color);
 }
 
 .img_bar{
@@ -121,14 +158,17 @@ a{
 .img_title{
     width: 100%;
     height: 30px;
-    background: rgb(29, 198, 250);
+    background: rgb(190, 190, 190);
     text-align: center;
     line-height: 30px;
+    border:  solid var(--main-color);
+    border-width: 1px 0px 1px 0px ;
     
 }
 .second_title{
     font-size: 24px;
     font-weight:bold;
+    color:var(--main-color);
 }
 .img_main{
     width: 900px;
@@ -138,7 +178,7 @@ a{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    /* grid-row-gap: 20px; */
+    grid-row-gap: 10px;
     /* justify-content: center; */
     /* align-content: center; */
     place-items:center center;
@@ -152,7 +192,7 @@ a{
     border-radius: 10px;
     text-align: center;
     box-sizing: border-box;
-    background-color: rgba(197, 94, 21, 0.733);
+    background-color: rgb(192, 192, 192);
     box-shadow: 0px 0px 2px rgb(17, 17, 17);
 
 
@@ -163,36 +203,207 @@ a{
 
 }
 .product_card:hover{
-    background-color: rgb(245, 108, 11);
+    background-color: var(--main-color);
 }
 .product_card img{
 
     width: 120px;
     height: 120px;
-    margin-top: 6px;
+    margin-top: 8px;
     /* margin-left: 5px; */
-    border-radius: 4px;
+    border-radius: 6px;
     box-sizing: border-box;
+    box-shadow: 0px 0px 1px black;
 
 }
 
 .car{
     width: 60px;
-    height: 40px;
+    height: 50px;
     /* background-color: black; */
    
-    border: rgb(175, 114, 114) 2px solid;
+    border: var(--main-color) 2px solid;
+    border-radius: 6px;
     position:sticky;
     top: 500px;
     float:right;
     right:100px;
-    color:coral;
+    color:var(--main-color);
     
 }
 .car:hover{
     color:white;
-    background-color: rgb(182, 71, 31);
-    border: rgb(233, 17, 17) 2px solid;;
+    background-color: rgb(109, 109, 109);
+    border: var(--main-color) 2px solid;;
 }
 
 
+.carbackground{
+    width: 1280px;
+    height: 100vh;
+    background-color: rgb(124, 235, 235);
+    position:absolute;
+    display:grid;
+    place-items:center;
+    /* display: none; */
+    visibility: hidden;
+    
+}
+.carBorder{
+    width: 800px;
+    height: 600px;
+    background-color: rgba(170, 170, 170, 0.911);
+    visibility: hidden;
+    z-index:999 ;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px black;
+    position: relative;
+
+    
+}
+
+.carBorder h1{
+    margin-top: 12px;
+    text-align: center;
+}
+
+.table_bg{
+    width: 620px;
+    height: 410px;
+    /* 
+    solid 实线
+    dotted 圆点虚线
+    dashed 线条虚线
+    
+    */
+    border: 2px dashed var(--main-color);
+    margin:auto;
+    margin-top: 12px;
+    overflow:auto;
+}
+.carBorder table{
+    width: 600px;
+    table-layout: fixed;   
+}
+
+.carBorder table th{
+    font-size: 18px;
+    height: 35px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(68, 68, 68);
+   
+}
+.carBorder table th:nth-child(1){
+    width: 60px;
+}
+
+.carBorder table th:nth-child(2){
+    width: 160px;
+}
+
+.carBorder table th:nth-child(5){
+    width: 60px;
+}
+.carBorder table tr:nth-child(2n+0){
+    background-color: rgba(207, 207, 207, 0.603);
+}
+.carBorder table tr:hover{
+    background-color: rgba(128, 128, 128, 0.904);
+    
+}
+
+.carBorder table td img{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+.carBorder table td{
+    text-align: center;
+    
+}
+.carBorder table  input{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* 关闭购物车按钮 */
+.carBorder>a{
+    width: 40px;
+    height: 40px;
+    position:absolute;
+    top:8px;
+    right:8px;
+    border:2px solid var(--main-color);
+    border-radius: 4px;
+}
+
+.carBorder>a:hover{
+    box-shadow: 0px 0px 1px black;
+}
+
+.carBorder>a::before,
+.carBorder>a::after{
+    content: "";
+    display: block;
+    width: 8px;
+    height: 36px;
+    border-radius: 6px;
+    background-color:var(--main-color);
+    float:left;
+    
+   
+}
+
+.carBorder>a::before{
+    transform: rotate(45deg);
+    transform-origin:10px 38px;
+}
+
+.carBorder>a::after{
+    transform: rotate(-45deg);
+    transform-origin:10px 10px;
+}
+
+
+
+.button{
+    width: 140px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    color: #333;
+  
+    background-color: var(--main-color);
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px rgb(59, 59, 59);
+}
+.button:hover{
+    color:white;
+    background-color: var(--second-main-color);
+    box-shadow: 0px 0px 2px black;
+}
+/* 设置清空购物车按钮*/
+.clearAll{
+    position: absolute;
+    bottom: 38px;
+    left: 100px;
+}
+/* 全选按钮 */
+.selectAll{
+    position: absolute;
+    bottom: 38px;
+    right: 320px;
+    
+}
+/* 结账下单Button */
+.submitButton{
+    position:absolute;
+    bottom: 38px;
+    right: 100px; 
+}
