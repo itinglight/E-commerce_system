@@ -7,6 +7,7 @@
     <title>itinglight在线商城</title>
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery.cookie-1.4.1.min.js"></script>
 </head>
 <body>
 
@@ -26,35 +27,52 @@
 
     <div class="main">
         <div class="header">
-           <a class="logo" href=""></a>
+           <a class="logo" href="">电子商城</a>
 
-            <h1>Shopping System.</h1>
+            <h1>Metavsion Shopping System.</h1>
             
         </div>
         <div class="asider">
             <div class="in_aside">
                 <ul>
-                    <li><a href="">时下流行</a></li>
-                    <li><a href="">时尚服装</a></li>
-                    <li><a href="">休闲食品</a></li>
-                    <li><a href="">数码产品</a></li>
-                    <li><a href="">运动产品</a></li>
-                    <li><a href="">日用百货</a></li>
+                    <li><a href="#">时下流行</a></li>
+                    <li><a href="#">时尚服装</a></li>
+                    <li><a href="#">休闲食品</a></li>
+                    <li><a href="#">数码产品</a></li>
+                    <li><a href="#">运动产品</a></li>
+                    <li><a href="#">日用百货</a></li>
                 </ul>
                 
             </div>
             <div class="img_bar">
-
-                
+                    <img width="100%" height="100%" src="./img/lb-2.jpeg" alt="" srcset="">
             </div>
+        </div>
+        <div class="img_title">
+            <span class="second_title">时下流行</span>
         </div>
         <div class="img_main">
 
+         
+            <!-- <div class="product_card">
+                <img src="./img/product-1.jpeg" alt="">
+                <br>
+                <span>遥控开关</span>
+                <br>
+                <span>价格:</span>
+                <span>99</span>
+                <span>¥</span>
+                <br>
+                <span>销量:</span>
+                <span>199</span>
 
-            <ul>
-                
-            </ul>
-
+                <br>
+                <span>库存:</span>
+                <span>499</span>
+                <br>
+                <button>加入购物车</button>
+            </div>
+     -->
     
 
         </div>
@@ -62,10 +80,188 @@
 
         
    <script>
-       $(function(){
-        let x = document.cookie;
-        //    alert(x)
-       })
+       
+ 
+
+            // <div class="product_card">
+            //     <img src="./img/product-1.jpeg">
+            //     <br></br>
+            //     <span>遥控开关</span>
+            //     <br>
+            //     <span>价格:</span>
+            //     <span>99</span>
+            //     <span>¥</span>
+            //     <br>
+            //     <span>销量:</span>
+            //     <span>199</span>
+            //     <br>
+            //     <span>库存:</span>
+            //     <span>499</span>
+            //     <br>
+            //     <button>加入购物车</button>
+            // </div>"
+    
+        //添加商品卡片
+        function addnewcard(card_id){
+
+            var text="<div class='product_card newcard'></div>";
+            $(".img_main").prepend(text);
+            $(".newcard").attr("class","product_card "+"card"+card_id)
+            return card_id;
+
+           
+        }
+         //在卡片里面添加数据
+        function addProduct(card_id){
+            // 添加卡片
+            addnewcard(card_id);
+           
+            var text1="<img>";
+            var text2="<br>";
+            var text3="<span>遥控开关</span>";
+            var text4="<br>";
+            var text5="<span>价格:</span>";
+            var text6="<span>99</span>";
+            var text7="<span>¥</span>";
+            var text8="<br>";
+            var text9="<span>销量:</span>";
+            var text10="<span>199</span>";
+            var text11="<br>";
+            var text12="<span>库存:</span>";
+            var text13="<span>499</span>";
+            var text14="<br>";
+            var text15="<button>加入购物车</button>";
+            $(".card"+card_id).prepend(text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15);
+            $(".card"+card_id+" img").attr("src","./img/product-1.jpeg")
+        }
+         //在卡片里面添加 并且改变
+        function addProduct1(card_id,img_url,product_name,prise,stock,sales_volume){
+            // 添加卡片
+            addnewcard(card_id);
+            //添加内容
+            var text1="<img>";
+            var text2="<br>";
+            var text3="<span>"+product_name+"</span>";
+            var text4="<br>";
+            var text5="<span>价格:</span>";
+            var text6="<span>"+prise+"</span>";
+            var text7="<span>¥</span>";
+            var text8="<br>";
+            var text9="<span>销量:</span>";
+            var text10="<span>"+sales_volume+"</span>";
+            var text11="<br>";
+            var text12="<span>库存:</span>";
+            var text13="<span>"+stock+"</span>";
+            var text14="<br>";
+            var text15="<button>加入购物车</button>";
+            $(".card"+card_id).prepend(text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15);
+            $(".card"+card_id+" img").attr("src",img_url)
+        }
+        //更剧json数组动态展示商品
+        function addProduct3(card_id,img_url,product_name,prise,stock,sales_volume){
+            // card_id,img_url,product_name,prise,stock,sales_volume
+            // $.ajax({
+            //         url: "./findallProduct",
+            //         method:"get"
+            //         }).done(function(data) {
+            //             console.log(data);
+            //         })
+            // 添加卡片
+            addnewcard(card_id);
+            //添加内容
+            var text1="<img>";
+            var text2="<br>";
+            var text3="<span>"+product_name+"</span>";
+            var text4="<br>";
+            var text5="<span>价格:</span>";
+            var text6="<span>"+prise+"</span>";
+            var text7="<span>¥</span>";
+            var text8="<br>";
+            var text9="<span>销量:</span>";
+            var text10="<span>"+sales_volume+"</span>";
+            var text11="<br>";
+            var text12="<span>库存:</span>";
+            var text13="<span>"+stock+"</span>";
+            var text14="<br>";
+            var text15="<button>加入购物车</button>";
+            $(".card"+card_id).prepend(text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15);
+            $(".card"+card_id+" img").attr("src",img_url)
+        }
+
+        
+
+        //动态展示number个商品
+        function show_product(number){
+
+            $.ajax({
+                    url: "http://localhost:8080/findallProduct?kinds="+number,
+                    dataType: 'json',
+                    type:"get",
+                    async : true,
+                    success:function(data){
+                        for(var i=0;i<=data.length;i++){
+                        addProduct3(data[i].product_id,data[i].img_url,data[i].product_name,data[i].prise,data[i].stock,data[i].sales_volume);
+                        }
+                    }
+                    
+                });
+        
+
+        }
+
+
+        function show_product_list(){
+                    //根据二级标题内容展示商品
+                    var title=$(".second_title").text();
+                    var number;
+                        switch(title){
+                            case "时下流行":
+                                number=1;break;
+                            case "时尚服装":
+                                number=2;break;
+                            case "休闲食品":
+                                number=3;break;
+                            case "数码产品":
+                                number=4;break;
+                            case "运动产品":
+                                number=5;break;
+                            default:
+                                number=6;break;
+                        }
+                    show_product(number)
+        }
+
+            //切换二级标题
+            $(".in_aside a").click(
+                function(){  //动态 根据二级标题内容展示商品
+                    $(".second_title").text($(".in_aside a:hover").text())
+                    $(".img_main").empty();
+                    show_product_list()
+                }
+            );
+
+                //页面初始化时 根据二级标题内容展示商品
+            $(function(){
+            
+                $.ajax({
+                    url: "http://localhost:8080/findallProduct",
+                    dataType: 'json',
+                    type:"get",
+                    async : true,
+                    success:function(data){
+                        console.log(data);
+                        for(var i=0;i<=data.length;i++){
+                        addProduct3(data[i].product_id,data[i].img_url,data[i].product_name,data[i].prise,data[i].stock,data[i].sales_volume);
+                            
+                        }
+                    }
+                    
+                });
+                
+            });
+
+             
+            
    </script>
 </body>
 </html>

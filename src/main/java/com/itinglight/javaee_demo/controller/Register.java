@@ -1,6 +1,6 @@
 package com.itinglight.javaee_demo.Webmapping;
 
-import com.itinglight.javaee_demo.controller.UserController;
+import com.itinglight.javaee_demo.tools.UserController;
 import com.itinglight.javaee_demo.entity.User;
 
 import javax.servlet.ServletException;

@@ -3,30 +3,31 @@
     padding:0px;
 }
 body{
-    background-color:#fcdeb4af;
+    background-color:#e2e2e2af;
 }
 a{
     text-decoration:none;
-    color:#333;
+    color:rgb(75, 75, 75);
     font-family: sans-serif;
 }
 
 .topbar{
     width: 1280px;
     height: 24px;
-    background-color: #FEC973;
+    background-color: #202020;
     position: sticky;
     top:0px;
     z-index: 99;
   
 }
 .topbar >a{
+    color:#FFF;
     margin:0 20px
 }
 
 .topbar ul{
     float:right;
-    
+     
 }
 .topbar li{
 
@@ -35,6 +36,10 @@ a{
     float:left;
     margin:0 10px;
     list-style: none;
+    
+}
+.topbar li a{
+    color:#FFF;
 }
 .topbar li a:hover{
     color:#FFF;
@@ -48,7 +53,7 @@ a{
 .main{
     
     width: 900px;
-    height: 640px;
+    height: 880px;
     background-color: sandybrown;
     margin:0 auto;
 
@@ -101,25 +106,75 @@ a{
 }
 
 .in_aside ul li:nth-child(even){
-    background-color: rgb(243, 221, 96);
+    background-color: sandybrown ;
 }
 .in_aside ul li a:hover{
-    background-color:sandybrown ;
+    background-color:rgb(21, 161, 255);
 }
 
 .img_bar{
 
-
+    width: 630px;
+    height: 180px;
 
 }
-
+.img_title{
+    width: 100%;
+    height: 30px;
+    background: rgb(29, 198, 250);
+    text-align: center;
+    line-height: 30px;
+    
+}
+.second_title{
+    font-size: 24px;
+    font-weight:bold;
+}
 .img_main{
     width: 900px;
-    position: relative;
-    height: 1200px;
+    height: 560px;
+    margin:0 auto;
+  
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* grid-row-gap: 20px; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    place-items:center center;
+    overflow:auto;
 }
 
+.product_card{
+    width: 140px;
+    height: 260px;
+    /* border:2px black solid; */
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgba(197, 94, 21, 0.733);
+    box-shadow: 0px 0px 2px rgb(17, 17, 17);
 
+
+}
+.product_card span{
+
+    font-size: 12px;
+
+}
+.product_card:hover{
+    background-color: rgb(245, 108, 11);
+}
+.product_card img{
+
+    width: 120px;
+    height: 120px;
+    margin-top: 6px;
+    /* margin-left: 5px; */
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
 
 .car{
     width: 60px;

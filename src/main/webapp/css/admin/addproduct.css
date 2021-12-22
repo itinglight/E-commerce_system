@@ -1,0 +1,41 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    width: 100wh;
+    height: 100vh;
+    background-color: aliceblue;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.addBorder{
+    width: 300px;
+    height: 340px;
+    background-color: rgb(161, 161, 161);
+    text-align: right;
+
+}
+h2{
+    text-align: center;
+}
+.kindsborder>span{
+
+}
+.kinds{
+    float: left;
+}
+.kinds input{
+    width: 20px;
+    height: 20px;
+}
+
+.addBorder>input{
+    margin: 10px 0;
+    margin-right: 30px;
+    width: 180px;
+    height: 24px;
+   
+}
